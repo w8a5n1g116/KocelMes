@@ -1,0 +1,69 @@
+name: standard_process
+label: 标准工序
+icon: standard_process
+enable_search: true
+enable_api: true
+fields:
+    name:
+        type: text
+        label: 工序名称
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    process_no:
+        type: text
+        label: 工序编号
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    person_count:
+        type: number
+        label: 工序人数
+        scale: 0
+    woring_hours:
+        type: number
+        label: 人均工时
+        scale: 2
+    process_capacity:
+        type: number
+        label: 工序能力
+        scale: 2
+    process_order:
+        type: number
+        label: 工序顺序
+        scale: 0
+    series_or_parallel:
+        type: select
+        label: 工序顺序
+        options: 串联:series,并联:parallel
+        defaultValue: series
+    team:
+        type: lookup
+        label: 班组
+        reference_to: team_info
+        relatedList: true
+            
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - process_no
+            - name
+            - process_capacity
+            - woring_hours
+            - series_or_parallel
+            - team
+            - remark
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true

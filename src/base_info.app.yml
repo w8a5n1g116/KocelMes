@@ -1,0 +1,17 @@
+_id: base_info
+name: 基础信息
+description: Mes系统基础信息。
+icon_slds: approval
+is_creator: true
+objects: 
+  - customer
+  - product
+  - product_class
+  - standard_process
+  - team_info
+mobile_objects:
+  - customer
+  - product
+  - product_class
+  - standard_process
+  - teams

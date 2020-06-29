@@ -1,0 +1,62 @@
+name: product
+label: 产品信息
+icon: product
+enable_search: true
+enable_api: true
+enable_tree: true
+fields:
+    name:
+        type: text
+        label: 产品名称
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    product_no:
+        type: text
+        label: 产品编号
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    customer:
+        type: lookup
+        label: 顾客
+        reference_to: customer
+        relatedList: true
+    drawing:
+        type: text
+        label: 图纸号
+    weight:
+        type: number
+        label: 净重
+        scale: 2
+    texture:
+        type: text
+        label: 材质
+    prodct_class:
+        type: lookup
+        label: 产品类别
+        reference_to: product_class
+        relatedList: true
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - product_no
+            - name
+            - customer
+            - texture
+            - remark
+        
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true

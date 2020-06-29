@@ -1,0 +1,52 @@
+name: customer
+label: 顾客信息
+icon: customers
+enable_search: true
+enable_api: true
+fields:
+    name:
+        type: text
+        label: 顾客名称
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    customer_no:
+        type: text
+        label: 顾客编号
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    company:
+        type: text
+        label: 所属公司
+    address:
+        type: text
+        label: 地址
+    contact:
+        type: text
+        label: 联系人
+    phone:
+        type: text
+        label: 电话
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - customer_no
+            - name
+            - contact
+            - phone
+            - remark
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true

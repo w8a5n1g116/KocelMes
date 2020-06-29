@@ -1,0 +1,38 @@
+name: team_info
+label: 班组信息
+icon: teams
+enable_search: true
+enable_api: true
+fields:
+    name:
+        type: text
+        label: 班组名称
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    team_no:
+        type: text
+        label: 班组编号
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+            
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - team_no
+            - name
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true
