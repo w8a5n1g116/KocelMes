@@ -1,6 +1,6 @@
 name: team_info
 label: 班组信息
-icon: teams
+icon: customers
 enable_search: true
 enable_api: true
 fields:

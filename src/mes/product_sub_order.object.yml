@@ -1,0 +1,44 @@
+name: product_sub_order
+label: 生产工单
+icon: customers
+enable_search: true
+enable_api: true
+fields:
+    product_no:
+        type: text
+        label: 生产单号
+    product_order:
+        type: lookup
+        label: 生产订单
+        reference_to: product_order
+    casting_no:
+        type: text
+        label: 件号
+    letest_process:
+        type: lookup
+        label: 最近工序
+        reference_to: standard_process
+    sub_order_status:
+        label: 工单状态
+        type: select
+        options: 1:1,2:2,3:3
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - product_no
+            - product_order
+            - casting_no
+            - letest_process
+            - sub_order_status
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true

@@ -1,6 +1,6 @@
 name: standard_process
 label: 标准工序
-icon: standard_process
+icon: customers
 enable_search: true
 enable_api: true
 fields:

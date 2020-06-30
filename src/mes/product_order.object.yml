@@ -1,0 +1,46 @@
+name: product_order
+label: 生产订单
+icon: customers
+enable_search: true
+enable_api: true
+fields:
+    sales_order:
+        type: lookup
+        label: 销售订单
+        reference_to: sales_order
+    producting_count:
+        type: number
+        label: 投产数量
+        scale: 0
+    inhouse_count:
+        type: number
+        label: 入库数量
+        scale: 0
+    order_status:
+        label: 订单状态
+        type: select
+        options: 1:1,2:2,3:3
+    delivery_status:
+        label: 交货状态
+        type: select
+        options: 1:1,2:2,3:3
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - sales_order
+            - productind_count
+            - inhouse_count
+            - order_status
+            - delivery_status
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true

@@ -1,16 +1,20 @@
-name: product_class
-label: 产品类别
-icon: product_class
+name: technology_info
+label: 工艺信息
+icon: customers
 enable_search: true
 enable_api: true
 fields:
-    name:
+    product:
+        type: lookup
+        label: 产品信息
+        reference_to: product
+    version:
         type: text
-        label: 类别名称
+        label: 版本号
         defaultValue: ''
         searchable: true
         required: true
-        sortable: true
+        sortable: true           
     remark:
         type: text
         label: 备注
@@ -18,8 +22,8 @@ list_views:
     all:
         label: 全部
         columns:
-            - name
-            - remark
+            - product
+            - version
 permission_set:
     user:
         allowCreate: true

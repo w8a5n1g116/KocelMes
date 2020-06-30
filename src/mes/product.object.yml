@@ -1,6 +1,6 @@
 name: product
 label: 产品信息
-icon: product
+icon: customers
 enable_search: true
 enable_api: true
 enable_tree: true

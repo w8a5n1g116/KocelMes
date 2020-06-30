@@ -1,0 +1,59 @@
+name: sales_order
+label: 销售订单
+icon: customers
+enable_search: true
+enable_api: true
+fields:
+    order_no:
+        type: text
+        label: 订单号
+    order_type:
+        type: text
+        label: 订单类型
+    product:
+        type: lookup
+        label: 产品信息
+        reference_to: product
+    sales_count:
+        type: number
+        label: 订单数量
+        scale: 0
+        required: true
+    contract_no:
+        type: text
+        label: 合同编号
+        defaultValue: ''
+    delivery_date:
+        label: 交货日期
+        type: date
+    delivery_status:
+        label: 交货状态
+        type: select
+        options: 1:1,2:2,3:3
+    charge_person:
+        label: 负责人
+        type: lookup
+        reference_to: users
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - order_no
+            - order_type
+            - product
+            - sales_count
+            - delivery_date
+            - contract_no
+            - delivery_status
+            - charge_person
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true

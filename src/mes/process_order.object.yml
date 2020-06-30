@@ -1,0 +1,48 @@
+name: process_order
+label: 工序工单
+icon: customers
+enable_search: true
+enable_api: true
+fields:
+    product_sub_order:
+        type: lookup
+        label: 生产订单
+        reference_to: product_sub_order
+    standard_process:
+        type: lookup
+        label: 生产工序
+        reference_to: standard_process
+    plan_start_date:
+        type: date
+        label: 计划开始时间
+    plan_end_date:
+        label: 计划结束时间
+        type: date
+    real_end_date:
+        label: 实际结束时间
+        type: date
+    process_order_status:
+        label: 工序状态
+        type: select
+        options: 1:1,2:2,3:3
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - product_sub_order
+            - standard_process
+            - plan_start_date
+            - plan_end_date
+            - real_end_date
+            - process_order_status
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true

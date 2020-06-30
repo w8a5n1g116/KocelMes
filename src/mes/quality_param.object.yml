@@ -1,0 +1,62 @@
+name: quality_param
+label: 质量参数
+icon: customers
+enable_search: true
+enable_api: true
+fields:
+    order_no:
+        type: number
+        label: 顺序号
+        scale: 0
+    process_info:
+        type: lookup
+        label: 工序信息
+        reference_to: standard_process
+    param_name:
+        type: text
+        label: 参数名称
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    param_type:
+        type: select
+        label: 参数类型
+        options: 1:1,2:2,3:3
+        required: true
+    pass_standard:
+        type: text
+        label: 合格标准
+        defaultValue: ''
+    param_description:
+        label: 参数描述
+        type: text
+    max:
+        label: Max
+        type: text
+    min:
+        label: Min
+        type: text
+    check_standard:
+        label: 检验标准
+        type: text
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - order_no
+            - process_info
+            - param_name
+            - param_type
+            - param_description
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true

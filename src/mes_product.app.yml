@@ -1,0 +1,16 @@
+_id: mes_product
+name: 生产管理
+description: 生产管理。
+icon_slds: approval
+is_creator: true
+objects: 
+  - sales_order
+  - process_order
+  - product_order
+  - product_sub_order
+mobile_objects:
+  - customer
+  - product
+  - product_class
+  - standard_process
+  - teams

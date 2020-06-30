@@ -1,0 +1,71 @@
+name: quality_param_report
+label: 质量评价
+icon: customers
+enable_search: true
+enable_api: true
+fields:
+    process_order:
+        type: lookup
+        label: 工序工单
+        reference_to: process_order
+    quality_param:
+        type: lookup
+        label: 质量参数
+        reference_to: quality_param
+    param_name:
+        type: text
+        label: 参数名称
+        defaultValue: ''
+        searchable: true
+        required: true
+        sortable: true
+    param_type:
+        type: select
+        label: 参数类型
+        options: 1:1,2:2,3:3
+        required: true
+    pass_standard:
+        type: text
+        label: 合格标准
+        defaultValue: ''
+    param_description:
+        label: 参数描述
+        type: text
+    max:
+        label: Max
+        type: text
+    min:
+        label: Min
+        type: text
+    check_standard:
+        label: 检验标准
+        type: text
+    quality_result:
+        label: 评价结果
+        type: text
+    unquality_type:
+        label: 不和类型
+        type: text
+    remark:
+        type: text
+        label: 备注
+list_views:
+    all:
+        label: 全部
+        columns:
+            - process_order
+            - quality_param
+            - param_name
+            - param_type
+            - pass_standard
+            - check_standard
+            - quality_result
+            - unquality_type
+permission_set:
+    user:
+        allowCreate: true
+        allowDelete: true
+        allowEdit: true
+        allowRead: true
+        modifyAllRecords: true
+        viewAllRecords: true
