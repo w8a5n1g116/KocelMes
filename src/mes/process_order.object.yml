@@ -4,14 +4,19 @@ icon: customers
 enable_search: true
 enable_api: true
 fields:
+    name:
+        label: 工序单号
+        type: text
     product_sub_order:
         type: lookup
-        label: 生产订单
+        label: 生产工单
         reference_to: product_sub_order
+        relatedList: true
     standard_process:
         type: lookup
         label: 生产工序
         reference_to: standard_process
+        relatedList: true
     plan_start_date:
         type: date
         label: 计划开始时间
@@ -32,6 +37,7 @@ list_views:
     all:
         label: 全部
         columns:
+            - name
             - product_sub_order
             - standard_process
             - plan_start_date
@@ -40,9 +46,16 @@ list_views:
             - process_order_status
 permission_set:
     user:
-        allowCreate: true
-        allowDelete: true
-        allowEdit: true
+        allowCreate: false
+        allowDelete: false
+        allowEdit: false
         allowRead: true
-        modifyAllRecords: true
+        modifyAllRecords: false
+        viewAllRecords: true
+    admin:
+        allowCreate: false
+        allowDelete: false
+        allowEdit: false
+        allowRead: true
+        modifyAllRecords: false
         viewAllRecords: true

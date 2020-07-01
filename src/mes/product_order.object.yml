@@ -3,15 +3,19 @@ label: 生产订单
 icon: customers
 enable_search: true
 enable_api: true
-fields:
-    sales_order:
+fields:  
+    name:
+        label: 生产订单号
+        type: text
+    sales:
         type: lookup
-        label: 销售订单
-        reference_to: sales_order
+        label: 销售订单     
+        reference_to: sales     
     producting_count:
         type: number
         label: 投产数量
         scale: 0
+    
     inhouse_count:
         type: number
         label: 入库数量
@@ -30,9 +34,10 @@ fields:
 list_views:
     all:
         label: 全部
-        columns:
-            - sales_order
-            - productind_count
+        columns:  
+            - name
+            - sales    
+            - producting_count          
             - inhouse_count
             - order_status
             - delivery_status

@@ -3,18 +3,25 @@ label: 工艺信息
 icon: customers
 enable_search: true
 enable_api: true
+enable_files: true
 fields:
     product:
         type: lookup
         label: 产品信息
         reference_to: product
+        relatedList: true
     version:
         type: text
         label: 版本号
         defaultValue: ''
         searchable: true
         required: true
-        sortable: true           
+        sortable: true  
+    process:
+        type: lookup
+        label: 工序
+        reference_to: standard_process
+        multiple: true
     remark:
         type: text
         label: 备注

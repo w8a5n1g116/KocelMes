@@ -8,11 +8,13 @@ fields:
         type: lookup
         label: 工序工单
         reference_to: process_order
+        relatedList: true
     quality_param:
         type: lookup
         label: 质量参数
         reference_to: quality_param
-    param_name:
+        relatedList: true
+    name:
         type: text
         label: 参数名称
         defaultValue: ''

@@ -5,7 +5,6 @@ icon_slds: approval
 is_creator: true
 objects: 
   - quality_param_report
-  - quality_param
 mobile_objects:
   - customer
   - product

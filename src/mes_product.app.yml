@@ -4,10 +4,10 @@ description: 生产管理。
 icon_slds: approval
 is_creator: true
 objects: 
-  - sales_order
-  - process_order
+  - sales
   - product_order
   - product_sub_order
+  - process_order
 mobile_objects:
   - customer
   - product

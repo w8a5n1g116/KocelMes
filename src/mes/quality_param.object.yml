@@ -4,21 +4,19 @@ icon: customers
 enable_search: true
 enable_api: true
 fields:
-    order_no:
-        type: number
-        label: 顺序号
-        scale: 0
-    process_info:
-        type: lookup
-        label: 工序信息
-        reference_to: standard_process
-    param_name:
+    name:
         type: text
         label: 参数名称
         defaultValue: ''
         searchable: true
         required: true
         sortable: true
+    process_info:
+        type: lookup
+        label: 工序信息
+        reference_to: standard_process
+        relatedList: true
+    
     param_type:
         type: select
         label: 参数类型
@@ -47,7 +45,7 @@ list_views:
     all:
         label: 全部
         columns:
-            - order_no
+            - name
             - process_info
             - param_name
             - param_type

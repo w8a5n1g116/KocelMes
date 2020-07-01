@@ -4,13 +4,14 @@ icon: customers
 enable_search: true
 enable_api: true
 fields:
-    product_no:
+    name:
         type: text
-        label: 生产单号
+        label: 生产工单号
     product_order:
         type: lookup
         label: 生产订单
         reference_to: product_order
+        relatedList: true
     casting_no:
         type: text
         label: 件号
@@ -18,6 +19,7 @@ fields:
         type: lookup
         label: 最近工序
         reference_to: standard_process
+        relatedList: true
     sub_order_status:
         label: 工单状态
         type: select
@@ -29,7 +31,7 @@ list_views:
     all:
         label: 全部
         columns:
-            - product_no
+            - name
             - product_order
             - casting_no
             - letest_process
